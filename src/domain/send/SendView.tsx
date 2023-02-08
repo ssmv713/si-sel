@@ -1,17 +1,13 @@
 import { css } from "@emotion/react";
 import Image from "next/image";
 import logo from "@/main/logo.png";
+import { MessageContent } from "./component";
 
-import { BottomBar } from "components/bottomBar";
-import { MessageBox, SendMessageBtn } from "./component";
-
-export const MessagesView = () => {
+export const SendView = () => {
   return (
     <div css={sx.root}>
-      <div css={sx.header}>Messages</div>
-      <MessageBox />
-      <SendMessageBtn />
-      <BottomBar />
+      <div css={sx.header}>Send a Message</div>
+      <MessageContent />
     </div>
   );
 };

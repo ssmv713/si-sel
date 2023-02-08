@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import Image from "next/image";
 import logo from "@/main/logo.png";
 import { Graph, SearchforHelp, SendaMessage } from "./component";
-import { BottomBar } from "components/bottomBar";
+import { BottomBar } from "@/components/bottomBar";
 
 export const Mainview = () => {
   return (

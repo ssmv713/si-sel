@@ -83,5 +83,10 @@ const sx = {
     height: 481px;
     overflow: scroll;
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   `,
 };

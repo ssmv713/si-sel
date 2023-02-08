@@ -1,4 +1,4 @@
-import { Mainview } from "domain/main/Mainview";
+import { Mainview } from "@/domain/main/Mainview";
 
 export default function Home() {
   return (

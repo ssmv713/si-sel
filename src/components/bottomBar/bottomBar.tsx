@@ -1,33 +1,37 @@
 import { css } from "@emotion/react";
 import Image from "next/image";
 import { useState } from "react";
-
+import { useRouter } from "next/router";
+import { Colors } from "@/theme/Color";
 export const BottomBar = () => {
   const models = [
     {
       title: "Home",
-      //   src: "/bottomBar/home-ic.svg",
       src: "/bottomBar/home1.png",
       selected: "/bottomBar/home-selected.png",
       alt: "home",
+      router: "/",
     },
     {
       title: "Message",
       src: "/bottomBar/message.png",
       alt: "Message",
       selected: "/bottomBar/message-selected.png",
+      router: "messages",
     },
     {
       title: "Help",
       src: "/bottomBar/help-ic.svg",
       alt: "Help",
       selected: "/bottomBar/help-selected.png",
+      router: "help",
     },
     {
       title: "News",
       src: "/bottomBar/news-ic.svg",
       alt: "News",
       selected: "/bottomBar/news-selected.png",
+      router: "news",
     },
   ];
 
@@ -35,10 +39,18 @@ export const BottomBar = () => {
   const onClick = (index: number) => {
     setIsClicked(index);
   };
+  const router = useRouter();
   return (
     <div css={sx.root}>
       {models.map((it, index) => (
-        <div css={sx.innerBox} key={index} onClick={() => onClick(index)}>
+        <div
+          css={sx.innerBox}
+          key={index}
+          onClick={() => {
+            onClick(index);
+            router.push(`${it.router}`);
+          }}
+        >
           <Image
             src={index == isClicked ? it.selected : it.src}
             alt={it.alt}
@@ -55,7 +67,7 @@ export const BottomBar = () => {
 
 const sx = {
   title: (isClicked: boolean) => css`
-    color: ${isClicked ? "#147AD6" : "#1A1A1A"};
+    color: ${isClicked ? Colors.ActiveBlue : "#1A1A1A"};
   `,
   innerBox: css`
     display: flex;

@@ -1,10 +1,10 @@
-import { MessagesView } from "domain/messages";
+import { HelpView } from "@/domain/help";
 import { NextPage } from "next";
 
 const Main: NextPage = () => {
   return (
     <div>
-      <MessagesView />
+      <HelpView />
     </div>
   );
 };

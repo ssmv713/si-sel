@@ -1,5 +1,6 @@
+import { BottomBar } from "@/components/bottomBar";
 import { css } from "@emotion/react";
-import { BottomBar } from "components/bottomBar";
+
 import { Content, SearchBar } from "./component";
 
 export const HelpView = () => {

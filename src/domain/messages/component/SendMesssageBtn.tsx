@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import Image from "next/image";
 import send from "@/messages/send-ic.png";
+import { Colors } from "@/theme/Color";
 export const SendMessageBtn = () => {
   return (
     <div css={sx.root}>
@@ -14,7 +15,7 @@ const sx = {
   root: css`
     width: 204px;
     height: 40px;
-    background-color: #147ad6;
+    background-color: ${Colors.ActiveBlue};
     border-radius: 100px;
     display: flex;
     align-items: center;
