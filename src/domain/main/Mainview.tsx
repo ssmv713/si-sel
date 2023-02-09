@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import Image from "next/image";
 import logo from "@/main/logo.png";
-import { Graph, SearchforHelp, SendaMessage } from "./component";
+import { PieChart, SearchforHelp, SendaMessage } from "./component";
 import { BottomBar } from "@/components/bottomBar";
 
 export const Mainview = () => {
@@ -16,7 +16,7 @@ export const Mainview = () => {
         </div>
         <SendaMessage />
         <SearchforHelp />
-        <Graph />
+        <PieChart />
       </div>
       <BottomBar />
     </div>
@@ -39,7 +39,16 @@ const sx = {
     line-height: 38px;
   `,
   inner: css`
+    padding-bottom: 20px;
+    height: 100%;
     position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   `,
   blueBg: css`
     width: 100%;
@@ -60,7 +69,7 @@ const sx = {
     height: 682.18px;
     border-radius: 16px;
     position: relative;
-    padding: 28px 16px;
+    padding: 28px 16px 80px 16px;
     overflow: hidden;
     box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.16);
     font-size: 14px;
